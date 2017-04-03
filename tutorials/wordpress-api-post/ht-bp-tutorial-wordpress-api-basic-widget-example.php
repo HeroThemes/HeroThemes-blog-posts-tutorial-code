@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 */
 class My_Widget extends WP_Widget { 
 
-    //Sets up the widgets name etc 
+    //set up widget
     public function __construct() { 
 
         $widget_ops = array( 
@@ -27,7 +27,7 @@ class My_Widget extends WP_Widget {
      */
 
     public function widget( $args, $instance ) {
-        // outputs the content of the widget
+        //outputs the content of the widget
         echo $args['before_widget'];
 
         if( !empty( $instance['title'] ) ) {
@@ -46,8 +46,7 @@ class My_Widget extends WP_Widget {
      */
 
     public function form( $instance ) {
-
-        // outputs the options form on admin
+        //outputs the options form on admin
         $title = ( !empty( $instance['title'] ) ) ? $instance['title'] : ''; ?>
 
         <label for="<?php echo $this->get_field_name( 'title' ); ?>">Title: </label>

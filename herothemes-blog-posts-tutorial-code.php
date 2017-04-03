@@ -24,9 +24,8 @@ if( !class_exists( 'HT_Blog_Post_Tutorial_Code' ) ){
 
             //load tutorials
             include_once('tutorials/ht-bp-tutorials.php');
-        }
-
-        
+        }  
+              
     }
 
 }

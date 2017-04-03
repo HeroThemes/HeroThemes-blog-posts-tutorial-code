@@ -2,6 +2,9 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+/**
+* Add rest support to an existing post type
+*/
 add_action( 'init', 'my_custom_post_type_rest_support', 25 );
 
 function my_custom_post_type_rest_support() {
@@ -14,5 +17,4 @@ function my_custom_post_type_rest_support() {
         $wp_post_types[$post_type_name]->rest_base = $post_type_name;
         $wp_post_types[$post_type_name]->rest_controller_class = 'WP_REST_Posts_Controller';
     }
-
 }

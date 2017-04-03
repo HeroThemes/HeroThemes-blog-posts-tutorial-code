@@ -1,14 +1,14 @@
 <?php 
 
-/** 
-* Plugin Name: KB - REST API Widget 
-*/
-
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 
+/**
+* HeroThemes REST API Widget
+*/
 class REST_API_Widget extends WP_Widget { 
-	/** * Sets up the widgets name etc */ 
+
+	//set up widget 
 	public function __construct() { 
 		$widget_ops = array( 	'classname' => 'rest-api-widget',
  								'description' => 'A REST API widget that pulls posts from a different website'
@@ -23,6 +23,7 @@ class REST_API_Widget extends WP_Widget {
 	* @param array $instance
 	*/
 	public function widget( $args, $instance ) {
+		//change this url to the WP-API endpoint for your site!
 		$response = wp_remote_get( 'https://example.com/wp-json/wp/v2/ht-kb/' );
 
 		if( is_wp_error( $response ) ) {
@@ -40,7 +41,7 @@ class REST_API_Widget extends WP_Widget {
 			echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'], $instance, $this->id_base ) . $args['after_title'];
 		}
 		
-		// Main Widget Content Here
+		//main widget content
 		if( !empty( $posts ) ) {
 		
 			echo '<ul>';
@@ -61,7 +62,6 @@ class REST_API_Widget extends WP_Widget {
 	*/
 	public function form( $instance ) {
 		// outputs the options form on admin
-
 		$title = ( !empty( $instance['title'] ) ) ? $instance['title'] : '';
 		?>
 
