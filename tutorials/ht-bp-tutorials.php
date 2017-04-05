@@ -13,8 +13,13 @@ if( !class_exists( 'HT_Blog_Post_Tutorials' ) ){
             
 
             //load tutorials
+            //WordPress API
             include_once('wordpress-api-post/ht-bp-tutorial-wordpress-api-basic-widget-example.php');
             include_once('wordpress-api-post/ht-bp-tutorial-wordpress-api-completed-widget-example.php');
+
+            //membership
+            include_once('wordpress-members-restriction-post/ht-bp-tutorial-wordpress-add-private-post-view-cap-to-subscribers.php');
+
 
         }
 

@@ -46,7 +46,7 @@ class REST_API_Widget extends WP_Widget {
 		
 			echo '<ul>';
 			foreach( $posts as $post ) {
-			echo '<li><a href="' . $post->link. '">' . $post->title->rendered . '</a></li>';
+				echo '<li><a href="' . $post->link. '">' . $post->title->rendered . '</a></li>';
 			}
 			echo '</ul>';
 			

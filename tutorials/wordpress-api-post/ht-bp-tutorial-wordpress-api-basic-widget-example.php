@@ -35,7 +35,8 @@ class My_Widget extends WP_Widget {
 
         }
 
-        // Main Widget Content Here
+        // Main Widget Content Goes Here
+
         echo $args['after_widget'];
     }
 
